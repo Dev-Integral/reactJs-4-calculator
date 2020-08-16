@@ -34,6 +34,7 @@ class App extends Component {
   calculate = (symbol)=>{
     let {current, previous} = this.state;
     if (previous.length > 0) {
+      // eslint-disable-next-line
       current = eval(String(previous[previous.length - 1] + current));
       this.setState({current: current, previous: [], nextIsReset: true});
     }
@@ -66,7 +67,7 @@ class App extends Component {
         <div className="floaty-input">{this.state.previous[this.state.previous.length - 1]}</div>
         :null
         }        
-        <input type='text' className="result" value={this.state.current} />
+        <input type='text' className="result" value={this.state.current} onChange={this.state.current} />
         {
           buttons.map((btn, i)=>{
             return <Button key={i} symbol={btn.symbol} cols={btn.cols} action= {(symbol)=> btn.action(symbol)}  />
