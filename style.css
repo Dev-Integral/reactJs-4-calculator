@@ -1,0 +1,272 @@
+@import url('https://fonts.googgleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  background: green;
+}
+section{
+    padding: 100px;
+    position: relative;
+  }
+header{
+  position: absolute;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+.banner:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(10, 32, 20, 0.6), transparent);
+}
+.fitBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .7;
+}
+.b1-content{
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+.b1-content h2{
+    font-size: 5em;
+}
+.b1-content p{
+    font-size: 1.2em;
+}
+.banner2{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner2 .b2-content{
+  min-width: 50%;
+  width: 50%;
+  padding-right: 40px;
+  position: relative;
+}
+.banner2 .imgBx{
+  position: relative;
+  min-width: 50%;
+  width: 50%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn{
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 30px;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+.b2-content h2{
+  font-size: 2em;
+  font-weight: 600;
+  color: #191919;
+}
+.b2-content p{
+  font-size: 1em;
+  color: #191919;
+}
+.banner3{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.banner3:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #fff, transparent);
+}
+.banner3:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to bottom, #fff, transparent);
+}
+.banner3 .b3-content p{
+  color: #fff;
+  font-size: 5em;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: .6;
+}
+.culture{
+  text-align: center;
+  position: relative;
+}
+.titleText{
+  font-weight: 600;
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.text{
+  color: #fff;
+  font-size: 1em;
+}
+
+.culture .content{
+  text-align: center;
+  position: relative;
+}
+.culture .cultureList{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.culture .cultureList .box{
+  position: relative;
+  min-width: 350px;
+  height: 480px;
+  background: #191919;
+  transition: 0.5s;
+  margin: 10px;
+}
+.culture .cultureList:hover .box{
+  opacity: 0.2;
+}
+.culture .cultureList .box:hover{
+  opacity: 1;
+}
+.culture .cultureList .box .imgBx{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+.culture .cultureList .box .content{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.culture .cultureList .box .content h2{
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+.culture .cultureList .box .content span{
+  font-size: 0.8em;
+  font-weight: 300;
+  opacity: 0.5;
+}
+.footer{
+  align-items: center;
+  background: #111;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer .sci{
+  display: flex;
+}
+.footer .sci li{
+  list-style: none;
+}
+.footer .sci a{
+  text-decoration: none;
+  margin: 0 20px;
+}
+.footer .sci li a img{
+  filter: invert(1);
+  max-width: 40px;
+}
+.copyrightText{
+  margin-top: 20px;
+  color: #666;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+.copyrightText a{
+  text-decoration: none;
+  color: #fff;
+}
+.specialDot{
+  color: tomato;
+}
+.coatText{
+  color: #111;
+}
+
+@media(max-width: 767px){
+  section{
+    padding: 40px;
+  }
+  .banner .content h2{
+    font-size: 2.5em;
+  }
+  .banner .content p{
+    font-size: 1em;
+  }
+  .banner2{
+    flex-direction: column;
+  }
+  .banner2 .b2-content, .banner2 .imgBx{
+    min-width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .btn{
+    margin-bottom: 30px;
+  }
+  .destination .destinationList .box{
+    max-width: 350px;
+    height: 400px;
+    min-width: initial;
+    width: 350px;
+  }
+  .destination .destinationList .box .imgBx{
+    height: 320px;
+  }
+  .footer .sci li a img{
+    max-width: 30px;
+  } 
+}
