@@ -10,7 +10,7 @@ const services = [
 class Services extends Component {
 	render() {
 		return (
-			<section className="page-section" id="services">
+			<section className="page-section">
 				<div className="container">
 						<div className="text-center">
 								<h2 className="section-heading text-uppercase">Services</h2>

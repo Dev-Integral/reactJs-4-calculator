@@ -15,7 +15,7 @@ const members = [
 class Team extends Component{
     render(){
         return(
-            <section className="page-section bg-light" id="team">
+            <section className="page-section bg-light">
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">Our Amazing Team</h2>

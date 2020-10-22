@@ -21,7 +21,7 @@ class Portfolio extends Component {
 	render() {
 		return (
 			<div>
-				<section className="page-section bg-light" id="portfolio">
+				<section className="page-section bg-light">
 					<div className="container">
 						<div className="text-center">
 							<h2 className="section-heading text-uppercase">Portfolio</h2>

@@ -12,6 +12,12 @@ export const login =(email, password) => {
                     userId: res.data.userId
                 }
             })
+            API.getUser(res.data.userId, res.data.id, res2 =>{
+                dispatch({
+                    type: 'AFTER_LOGIN',
+                    payload: res2.data
+                })
+            })
         })
     }
    /*return {
@@ -21,10 +27,25 @@ export const login =(email, password) => {
     */
 }
 
-export const register = (email, password) => {
-    return {
-        type: 'REGISTER',
-        payload: { email, password}
+export const register = (email, name, password) => {
+    return dispatch => {
+        API.register(email, name, password, res => {
+            if(res.status===200){
+                dispatch(login(email, password));
+            }else{
+                if(res.response.data.error.message){
+                    dispatch({
+                        type: 'SHOW_ERROR',
+                        payload: 'Do you already have an account?'
+                    })
+                }
+            }
+        })
     }
+    /*return {
+        type: 'REGISTER',
+        payload: { email, name, password}
+    } */
+    
 }
 

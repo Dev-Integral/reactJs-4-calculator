@@ -13,11 +13,12 @@ class PageWrapper extends Component{
                         </button>
                         <div className="collapse navbar-collapse" id="navbarResponsive">
                             <ul className="navbar-nav text-uppercas  e ml-auto">
-                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/#services">Services</Link></li>
-                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/#portfolio">Portfolio</Link></li>
-                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/about">About</Link></li>
-                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/about#team">Team</Link></li>
-                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/contact">Contact</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/#1">Services</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/#2">Portfolio</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/3">About</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/blog">Blog</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/3#4">Team</Link></li>
+                                <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/5">Contact</Link></li>
                             </ul>
                         </div>
                     </div>

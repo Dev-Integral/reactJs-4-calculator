@@ -14,11 +14,15 @@ class Home extends Component{
                     image={image}
                     title={'Welcome To Our Studio!'}
                     subtitle={"Its's nice to meet you."} 
-                    link={"/#services"}
+                    link={"/#1"}
                     buttonText={'Tell Me More'}
                 />
-                <Services />
-                <Portfolio />
+                <div id='1'>
+                    <Services />
+                </div>
+                <div id='2'>
+                    <Portfolio />
+                </div>
             </div>
         )
     }

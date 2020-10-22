@@ -18,6 +18,9 @@
     font-size: 22px;
     margin-bottom: 20px;
 }
-form, .btn{ 
+.login-form form, .login-form .btn{ 
+    width: 100%;
+}
+.post-content img{
     width: 100%;
 }

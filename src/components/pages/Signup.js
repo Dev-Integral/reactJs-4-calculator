@@ -6,28 +6,31 @@ import {connect} from 'react-redux';
 import Field from '../common/Field';
 
 const fields=[
+    {name: 'name', elementName:'input', type:'text', placeholder:'Enter your Name'},
     {name: 'email', elementName:'input', type:'email', placeholder:'Enter your Email'},
-    {name: 'password', elementName:'input', type:'password', placeholder:'Enter your Password'}
+    {name: 'password', elementName:'input', type:'password', placeholder:'Enter your Password'},
+    {name: 'password2', elementName:'input', type:'password', placeholder:'Enter your password again'}
 ]
 
-class Login extends Component{
+class Signup extends Component{
     render() {
         return(
             <div className="login-page">
                 <div className="container">
                     <div className="login-form">
                         <div className="row">
-                            <h1>Login</h1>
+                            <h1>Signup</h1>
                         </div>
-                        <div className="row">
-                            <form onSubmit={e => {
+                        <div>
+                            <form className="row" onSubmit={e => {
                                 e.preventDefault();
-                                this.props.login(this.props.values.email, this.props.values.password)
+                                this.props.register(this.props.values.email, this.props.values.name, this.props.values.password)
                                 }}>
                                 {fields.map((field, i) => {
                                     return (
-                                    <div className="col-md-12" key={i}>
-                                         <Field
+                                    <div className="col-md-6">
+                                         <Field 
+                                            key={i}
                                             {...field} 
                                             value={this.props.values[field.name]}
                                             name={field.name}
@@ -36,11 +39,12 @@ class Login extends Component{
                                             touched={(this.props.touched[field.name])}
                                             errors={this.props.errors[field.name]}
                                         />
-                                </div>
+                                    </div>
                                 )
                                 })}
                                 <div className="col-md-12">
-                                    <button className="btn btn-primary" type="submit">Send</button>
+                                    <p className="text-danger text-center">{this.props.auth.error || null}</p>
+                                    <button className="btn btn-primary" type="submit">Signup</button>
                                 </div>
                             </form>
                         </div>
@@ -59,8 +63,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        login: (email, password) => {
-            dispatch(Authactions.login(email, password));
+        register: (email, name, password) => {
+            dispatch(Authactions.register(email, name, password));
         }
     }
 }
@@ -71,10 +75,18 @@ export default connect(
 )(withFormik({
     mapPropsToValues: () => ({
         email: '',
-        password: ''
+        name: '',
+        password: '',
+        password2: ''
     }),
     validationSchema: Yup.object().shape({
+        name: Yup.string().required('We need your name'),
         email: Yup.string().email('Supply a valid email').required('Email is required'),
-        password: Yup.string().required('Password is required')
+        password: Yup.string().min(8, 'Minimum of 8 characters').required('Password is required'),
+        password2: Yup.string().required('You need to enter your password again').test('pass match', 'passwords dont match', function(value){
+            const {password} = this.parent;
+            console.log({password: password, password2: value})
+            return password === value;
+        })
     })
-})(Login));
+})(Signup));
