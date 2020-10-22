@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Divider from '@material-ui/core/divider';
+import Divider from '@material-ui/core/Divider';
 
 const drawerWidth = 240;
 const styles = theme => ({
