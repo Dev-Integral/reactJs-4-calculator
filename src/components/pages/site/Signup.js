@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import * as Authactions from '../../store/actions/authActions'
+import * as Authactions from '../../../store/actions/authActions'
 import {connect} from 'react-redux';
-import Field from '../common/Field';
+import Field from '../../common/Field';
 
 const fields=[
     {name: 'name', elementName:'input', type:'text', placeholder:'Enter your Name'},

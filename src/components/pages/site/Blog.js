@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Header from '../common/Header';
-import image from '../assets/img/about.jpg';
-import BlogItem from '../common/BlogItem';
+import Header from '../../common/Header';
+import image from '../../assets/img/about.jpg';
+import BlogItem from '../../common/BlogItem';
 
-import * as siteActions from '../../store/actions/siteActions';
+import * as siteActions from '../../../store/actions/siteActions';
 
 class Blog extends Component {
     componentDidMount() {

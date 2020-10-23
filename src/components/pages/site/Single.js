@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CommentBuilder from '../common/CommentBuilder';
-import Header from '../common/Header';
-import API from '../../utils/api';
-import * as siteActions from '../../store/actions/siteActions';
+import CommentBuilder from '../../common/CommentBuilder';
+import Header from '../../common/Header';
+import API from '../../../utils/api';
+import * as siteActions from '../../../store/actions/siteActions';
 import {Link} from 'react-router-dom';
 
 class Single extends Component{

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withFormik } from 'formik';
-import Field from '../common/Field';
+import Field from '../../common/Field';
 import * as Yup from 'yup';
 
 const fields = {

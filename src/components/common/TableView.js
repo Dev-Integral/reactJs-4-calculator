@@ -12,7 +12,7 @@ import Link from '@material-ui/core/Link';
 
 class TableView extends Component {
     render() {
-        const { rows, columns } = this.props;
+        const { rows, columns, whereToRoute } = this.props;
         return (
             <Paper>
                 <Table>
@@ -40,7 +40,9 @@ class TableView extends Component {
                                                     return(
                                                     <TableCell key={colIndex}>
                                                         { col.name==='id' ?
-                                                        <Link component={RouterLink} to={`/admin/posts/edit/${row[col.name]}`} >
+                                                        <Link component={RouterLink} to={
+                                                            whereToRoute==='user' ? `/admin/users/edit/${row[col.name]}` : `/admin/posts/edit/${row[col.name]}`
+                                                            } >
                                                             {row[col.name]}
                                                         </Link>
                                                         :

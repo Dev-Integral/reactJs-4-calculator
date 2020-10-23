@@ -3,20 +3,21 @@ import PageWrapper from './components/PageWrapper';
 import {Route, BrowserRouter as Router, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 // pages
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
-import Blog from './components/pages/Blog';
-import Single from './components/pages/Single';
-import Signup from './components/pages/Signup';
+import Home from './components/pages/site/Home';
+import About from './components/pages/site/About';
+import Contact from './components/pages/site/Contact';
+import Blog from './components/pages/site/Blog';
+import Single from './components/pages/site/Single';
+import Signup from './components/pages/site/Signup';
 // pages - Admin
 import Dashboard from './components/pages/Admin/Dashboard';
 import Users from './components/pages/Admin/Users';
 import Posts from './components/pages/Admin/Posts';
 import AddPost from './components/pages/Admin/AddPost';
+import AddUser from './components/pages/Admin/AddUser';
 
 import AdminWrapper from './components/AdminWrapper';
-import Login from './components/pages/Login';
+import Login from './components/pages/site/Login';
 import LoginWrapper from './components/LoginWrapper';
 
 
@@ -25,8 +26,45 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Route 
+          path='/admin/users/:view/:id'
+          exact={true}
+          render={(props) => {
+            return(
+            <div>
+              {this.props.auth.token ?
+                <AdminWrapper>
+                  <AddUser /> 
+                </AdminWrapper>
+                :
+                <LoginWrapper>
+                  <Login {...props} />
+                </LoginWrapper>
+            } 
+            </div>
+          )}}
+        />
+        <Route 
+          path='/admin/users/:view'
+          exact={true}
+          render={(props) => {
+            return(
+            <div>
+              {this.props.auth.token ?
+                <AdminWrapper>
+                  <AddUser /> 
+                </AdminWrapper>
+                :
+                <LoginWrapper>
+                  <Login {...props} />
+                </LoginWrapper>
+            } 
+            </div>
+          )}}
+        />
         <Route
           path='/admin/users'
+          exact={true}
           render={(props) => {
             return(
             <div>
@@ -42,6 +80,7 @@ class App extends Component {
             </div>
           )}}
         />
+        
         <Route
         exact={true}
         path='/signup'

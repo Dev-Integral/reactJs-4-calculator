@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from '../common/Header';
-import image from '../assets/img/header-bg.jpg';
+import Header from '../../common/Header';
+import image from '../../assets/img/header-bg.jpg';
 
-import Portfolio from '../common/Portfolio';
-import Services from '../common/Services';
+import Portfolio from '../../common/Portfolio';
+import Services from '../../common/Services';
 
 class Home extends Component{
     render(){
