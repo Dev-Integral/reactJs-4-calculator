@@ -3,7 +3,8 @@
 const defaultState = {
     users: [],
     posts: [],
-    post: {}
+    post: {},
+    user: {}
 }
 
 const admin = (state = defaultState, action) => {
@@ -12,6 +13,37 @@ const admin = (state = defaultState, action) => {
             return {
                 ...state,
                 users: action.payload
+            }
+        case 'USER_ADDED':
+            return {
+                ...state,
+                users: state.users.concat(action.payload),
+                user: action.payload
+            }
+        case 'USER_UPDATED': 
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    ...action.payload
+                },
+                users: state.users.map(u => {
+                    if(u.id === action.payload.id){
+                        //This is the existing user that has been updated
+                        // and currently in action.payload
+                        return{
+                            ...u,
+                            ...action.payload
+                        }
+                    }else{
+                        return u
+                    }
+                })
+            }
+        case 'GOT_SINGLE_USER':
+            return {
+                ...state,
+                user: action.payload
             }
         case 'GOT_POSTS':
             return {

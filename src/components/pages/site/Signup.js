@@ -28,9 +28,8 @@ class Signup extends Component{
                                 }}>
                                 {fields.map((field, i) => {
                                     return (
-                                    <div className="col-md-6">
+                                    <div className="col-md-6" key={i}>
                                          <Field 
-                                            key={i}
                                             {...field} 
                                             value={this.props.values[field.name]}
                                             name={field.name}

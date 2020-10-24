@@ -33,6 +33,29 @@ export const addPost = (post, token) => {
         })
     }
 }
+export const addUser = (newUserData, token) => {
+    return dispatch => {
+        API.addUser(newUserData, token, res => {
+            console.log({newUser: res.data});
+            dispatch({
+                type: 'USER_ADDED',
+                payload: res.data
+            })
+        })
+    }
+}
+export const getSingleUser = (userId, token) => {
+    console.log(userId, token);
+    return dispatch => {
+        API.getUser(userId, token, res => {
+            console.log({singleUser: res.data});
+            dispatch ({
+                type: 'GOT_SINGLE_USER',
+                payload: res.data
+            })
+        })
+    }
+}
 export const getSinglePost = (postId, token) => {
     return dispatch => {
         API.getSinglePost(postId, token, res => {
@@ -44,6 +67,17 @@ export const getSinglePost = (postId, token) => {
         })
     }
 
+}
+export const updateUser = (updatedData, userId, token) => {
+    return dispatch => {
+        API.updateUser(updatedData, userId, token, res => {
+            console.log({updatedPost: res.data});
+            dispatch ({
+                type: 'USER_UPDATED',
+                payload: res.data
+            })
+        })
+    }
 }
 export const updatePost = (post, postId, token) => {
     return dispatch => {

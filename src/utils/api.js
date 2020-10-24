@@ -18,17 +18,18 @@ const API = {
         });
     },
     getUser: (userId, token, success) => {
-        axios.get(`${host}/api/users/${userId}?access_token=${token}`, {
-            params: {
-                filter: {
-                    include: 'Profile'
-                }
-            }
-        }).then(res => {
+        axios.get(`${host}/api/users/${userId}?access_token=${token}`)
+        .then(res => {
             success(res);
         })
     },
-    register: (email,name, pass, success) => {
+    updateUser: (updatedData, userId, token, success) => {
+        axios.patch(`${host}/api/users/${userId}?access_token=${token}`, updatedData)
+        .then(res=>{
+            success(res);
+        })
+    },
+    register: (email, name, pass, success) => {
         axios.post(`${host}/api/users`, {email: email, name: name, password: pass})
         .then(res => {
             success(res);
@@ -38,7 +39,20 @@ const API = {
         })
     },
     getUsers: (token, success) => {
-        axios.get(`${host}/api/users?access_token=${token}`) 
+        axios.get(`${host}/api/users?access_token=${token}`, {
+            params: {
+                filter: { 
+                    include: 'Profile'
+                }
+            }
+        }) 
+        .then(res => {
+            success(res);
+        })
+    },
+    // Admin actions
+    addUser: (newUserData, token, success) => {
+        axios.post(`${host}/api/users?access_token=${token}`, newUserData)
         .then(res => {
             success(res);
         })

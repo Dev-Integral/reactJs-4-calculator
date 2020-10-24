@@ -20,11 +20,6 @@ export const login =(email, password) => {
             })
         })
     }
-   /*return {
-      type: 'LOGIN',
-      payload: {email, password}  
-    }
-    */
 }
 
 export const register = (email, name, password) => {
@@ -42,10 +37,5 @@ export const register = (email, name, password) => {
             }
         })
     }
-    /*return {
-        type: 'REGISTER',
-        payload: { email, name, password}
-    } */
-    
 }
 

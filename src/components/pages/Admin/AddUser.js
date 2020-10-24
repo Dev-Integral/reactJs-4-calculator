@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as Yup from 'yup';
 import { FormikTextField } from 'formik-material-fields';
+import * as adminActions from '../../../store/actions/adminActions';
 
 const styles = theme => ({
     container: {
@@ -46,18 +47,31 @@ const styles = theme => ({
 
 
 class AddUser extends Component{
-
     componentDidMount(props, state) {
-        console.log(this.props);
+        console.log({props: this.props});
+        if(this.props.match.params.view === 'edit' && this.props.match.params.id){
+            this.props.getSingleUser(this.props.match.params.id, this.props.auth.token);
+        }
+        if(this.props.admin.user && this.props.match.params.view === 'add'){
+            this.props.setValues({name: '', email: '', password: ''});
+        }
     }
-
+    componentDidUpdate(props, state) {
+        if(this.props.match.params.view ==='add' && this.props.admin.users.filter(u => u.name ===this.props.values.name)>0){
+            const user = this.props.admin.user.filter(u=> u.name === this.props.values.name)[0];
+            this.props.history.push('/admin/users/edit/'+ user.id);
+       }if(this.props.admin.user.id !== props.admin.user.id){
+           this.props.setValues(this.props.admin.user);
+       }
+    }
     render(){
         const {classes} = this.props
+        let submitText = 'Save'
         const fields = [
-            {name:'name', label: 'name', margin: 'normal'},
-            {name:'email', label: 'email', margin: 'normal'},
-            {name: 'password', label: 'password', margin: 'normal'},
-            {name: 'password', label: 'Confirm password', margin: 'normal'}
+            {name:'name', label: 'name', margin: 'normal', type: 'text'},
+            {name:'email', label: 'email', margin: 'normal', type: 'email'},
+            {name: 'password', label: 'password', margin: 'normal', type: 'password'},
+            {name: 'confirmPassword', label: 'Confirm password', margin: 'normal', type: 'password'}
         ]
         let pageTitle = '';
         
@@ -67,7 +81,7 @@ class AddUser extends Component{
             pageTitle = 'Edit';
         }
         return(
-            <div style={{background: 'red'}}>
+            <div style={{background: '#f1f1f1', padding: '10px'}}>
                 <h1>{pageTitle} User</h1>
                 <Divider />
                 <Form className={classes.container}>
@@ -78,11 +92,11 @@ class AddUser extends Component{
                                     <FormikTextField
                                     {...field}
                                     name={field.name}
+                                    type={field.type}
                                     label={field.label}
                                     margin={field.margin}
-                                    >
-
-                                    </FormikTextField>
+                                    fullwidth="true"
+                                     />
                                 </div>
                             )
                         })
@@ -93,7 +107,7 @@ class AddUser extends Component{
                         color="secondary"
                         onClick={e=>{this.props.handleSubmit()}}>
                             >
-                            <SaveIcon /> Save
+                            <SaveIcon /> {submitText}
                         </Button>
                         </div>
                     </Paper>
@@ -109,36 +123,51 @@ const mapStateToProps= (state) => {
         admin: state.admin
     }
 };
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addUser: (values, token) => {},
-        getSingleUser: (userid, token)=> {},
-        updateUser: (userId, valuetoken)=>{}
-    }
-};
+const mapDispatchToProps = (dispatch) => ({
+        addUser: (newUserData, token) => {
+            dispatch(adminActions.addUser(newUserData, token));
+        },
+        getSingleUser: (userId, token)=> {
+            dispatch(adminActions.getSingleUser(userId, token));
+        },
+        updateUser: (updatedData, userId, token)=>{
+            dispatch(adminActions.updateUser(updatedData, userId, token));
+        }
+    });
 
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
 )(withFormik({
 mapPropsToValues: (props) => ({
-    name: '',
-    email: '',
-    password: ''
-
+    name: props.admin.user.name || '',
+    email: props.admin.user.email || '',
+    password: props.admin.user.password || '',
+    confirmPassword: props.admin.user.password || ''
 }),
 validationSchema: Yup.object().shape({
-    name: Yup.string().required('Title is Required'),
-    email: Yup.string().required(),
-    password: Yup.string().required('Input your message')
-}),
+    name: Yup.string().required('Your name is Required'),
+    email: Yup.string().email('Supply a valid email').required('Email is required'),
+    password: Yup.string().min(8, 'Minimum of 8 Characters').required('Input your message'),
+    confirmPassword: Yup.string().required('You need to enter password again').test('pass match', "passwords don't match", function(value){
+        const {password} = this.parent;
+        return password === value;
+    })
+}), 
 handleSubmit: (values, {setSubmitting, props}) => {
-        if (props.match.params.view === 'edit'){
-            console.log(props.admin.post.id);
-            props.updateUser(values, props.admin.post.id, props.auth.token);
-        }
-        else{
-            props.addUser(values, props.auth.token);
+        
+        if(props.match.params.view === 'edit'){
+            const updatedData = {
+                name:values.name, 
+                email:values.email, 
+                password:values.password
+            };
+            console.log(updatedData);
+            props.updateUser(updatedData, props.admin.user.id, props.auth.token);
+        }else{
+            const newUserData = values;
+            console.log(newUserData);
+            props.addUser(newUserData, props.auth.token);
         }
     }
 })(withStyles(styles)(AddUser))));
