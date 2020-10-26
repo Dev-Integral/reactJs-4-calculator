@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Slides from '../components/Slides';
 import Footer from '../components/Footer';
+import miniLogo from '../components/images/mini_logo.png';
+import logo from '../components/images/logo.png';
 
 class PageWrapper extends Component {
     render() {
@@ -8,10 +10,10 @@ class PageWrapper extends Component {
             <div>
                 <nav>
                     <div className="logo">
-                        <img src="img/logo.png" alt="" />
+                        <img src={logo} alt="" />
                     </div>
                     <div className="mini-logo">
-                        <img src="img/mini_logo.png" alt="" />
+                        <img src={miniLogo} alt="" />
                     </div>
                     <ul>
                         <li><a href="#1"><i className="fa fa-home"></i> <em>Home</em></a></li>

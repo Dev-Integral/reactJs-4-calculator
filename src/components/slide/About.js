@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DownloadFile from '../common/DownloadFile';
+import aboutImage from '../images/about_image.jpg';
 
 class About extends Component {
     render() {
@@ -24,7 +25,7 @@ class About extends Component {
                             </div>
                             <div className="col-md-6">
                                 <div className="right-image">
-                                    <img src="img/about_image.jpg" alt="" />
+                                    <img src={aboutImage} alt="" />
                                 </div>
                             </div>
                         </div>
