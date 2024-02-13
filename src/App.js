@@ -104,7 +104,7 @@ class App extends Component {
           render={(props) => {
             return(
             <div>
-              {this.props.auth.token ?
+              {!this.props.auth.token ?
                 <AdminWrapper>
                   <Posts /> 
                 </AdminWrapper>
@@ -140,7 +140,7 @@ class App extends Component {
           render={(props) => {
             return(
             <div>
-              {this.props.auth.token ?
+              {!this.props.auth.token ?
                 <AdminWrapper>
                   <AddPost /> 
                 </AdminWrapper>
@@ -158,7 +158,7 @@ class App extends Component {
           render={(props) => {
             return(
             <div>
-              {this.props.auth.token ?
+              {!this.props.auth.token ?
                 <AdminWrapper>
                   <Dashboard /> 
                 </AdminWrapper>

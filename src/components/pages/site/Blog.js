@@ -34,7 +34,7 @@ class Blog extends Component {
                                             />
                                         )
                                     })
-                                    : null
+                                    : <p>No post</p>
                                 : null
                             }
                         </div>
