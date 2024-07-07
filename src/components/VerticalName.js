@@ -1,12 +1,14 @@
 // VerticalName.js
-import React from 'react';
+import React from "react";
 
 function VerticalName() {
   return (
-    <div className=" rotate-90 origin-bottom-right">
-      <span className="text-xl text-black font-bold ">
-        erjifiefwawe
-      </span>
+    <div className="hidden md:block">
+      <div className="flex h-full justify-end">
+        <div className="writing-mode-vertical-lr p-4 text-white bg-ta-blue text-[35px] text-center font-hammersmith">
+          TAIWO MORUFF AYOOLA
+        </div>
+      </div>
     </div>
   );
 }
