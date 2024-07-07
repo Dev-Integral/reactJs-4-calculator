@@ -10,7 +10,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <div className="relative flex items-center justify-between px-24 py-12 gap-6">
+        <div className="relative flex items-center justify-between px-24 py-12 gap-6 mb-24 md:mb-6">
           <div className="font-poppins text-xl">&copy;{new Date().getFullYear()}</div>
           <div className="h-1 bg-ta-blue w-full"></div>
           <div className="flex gap-3">

@@ -12,3 +12,10 @@
   .writing-mode-vertical-rl {
     writing-mode: vertical-rl;
   }
+
+  body{color: #303030;}
+
+  .placeholder-white::placeholder {
+    color: white;
+    opacity: .7;
+  }

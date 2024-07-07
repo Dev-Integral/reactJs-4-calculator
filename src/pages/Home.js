@@ -1,12 +1,6 @@
 import React from "react";
 import Name from "../components/Name";
 import TopLine from "../components/TopLine";
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaStackOverflow,
-  FaTwitter,
-} from "react-icons/fa";
 import { Header } from "../components/Header";
 import Footer from "../components/Footer";
 function Home() {
