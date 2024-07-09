@@ -1,7 +1,7 @@
 import React from "react";
 import TopLine from "../components/TopLine";
 import { Header } from "../components/Header";
-import glade from "../assets/images/glade.png";
+// import glade from "../assets/images/glade.png";
 import Footer from "../components/Footer";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
