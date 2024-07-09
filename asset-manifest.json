@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.f7bd76b0.css",
-    "main.js": "/static/js/main.6ff100ba.js",
-    "static/media/glade.png": "/static/media/glade.156d1cb7fcc59855b097.png",
-    "static/media/hammersmith-one-latin-400-normal.woff2": "/static/media/hammersmith-one-latin-400-normal.964e5dd101bf3d9cbb01.woff2",
-    "static/media/hammersmith-one-latin-ext-400-normal.woff2": "/static/media/hammersmith-one-latin-ext-400-normal.1fae03957b8792480a3c.woff2",
-    "static/media/hammersmith-one-latin-400-normal.woff": "/static/media/hammersmith-one-latin-400-normal.7cf49610d6da629546e3.woff",
-    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/hammersmith-one-latin-ext-400-normal.woff": "/static/media/hammersmith-one-latin-ext-400-normal.4240083e1761dacea522.woff",
-    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
-    "index.html": "/index.html",
-    "main.f7bd76b0.css.map": "/static/css/main.f7bd76b0.css.map",
-    "main.6ff100ba.js.map": "/static/js/main.6ff100ba.js.map"
+    "main.css": "/my_profile/static/css/main.20bc5e24.css",
+    "main.js": "/my_profile/static/js/main.f70a24c2.js",
+    "static/media/glade.png": "/my_profile/static/media/glade.156d1cb7fcc59855b097.png",
+    "static/media/hammersmith-one-latin-400-normal.woff2": "/my_profile/static/media/hammersmith-one-latin-400-normal.964e5dd101bf3d9cbb01.woff2",
+    "static/media/hammersmith-one-latin-ext-400-normal.woff2": "/my_profile/static/media/hammersmith-one-latin-ext-400-normal.1fae03957b8792480a3c.woff2",
+    "static/media/hammersmith-one-latin-400-normal.woff": "/my_profile/static/media/hammersmith-one-latin-400-normal.7cf49610d6da629546e3.woff",
+    "static/media/revicons.eot": "/my_profile/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/my_profile/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/hammersmith-one-latin-ext-400-normal.woff": "/my_profile/static/media/hammersmith-one-latin-ext-400-normal.4240083e1761dacea522.woff",
+    "static/media/revicons.woff": "/my_profile/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/my_profile/index.html",
+    "main.20bc5e24.css.map": "/my_profile/static/css/main.20bc5e24.css.map",
+    "main.f70a24c2.js.map": "/my_profile/static/js/main.f70a24c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7bd76b0.css",
-    "static/js/main.6ff100ba.js"
+    "static/css/main.20bc5e24.css",
+    "static/js/main.f70a24c2.js"
   ]
 }
