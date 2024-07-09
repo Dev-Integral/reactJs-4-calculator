@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
   const location = useLocation();
-
   return (
     <div>
       <header>
@@ -13,16 +12,34 @@ export const Header = () => {
           <li>
             <TaiwoLogo />
           </li>
-          <li className={`font-poppins cursor-pointer text-lg md:text-2xl ${location.pathname === '/home' ? 'font-bold': ''}`}>
+          <li
+            className={`font-poppins cursor-pointer text-lg md:text-2xl ${
+              location.pathname === "/home" || location.pathname === "/"
+                ? "font-bold"
+                : ""
+            }`}
+          >
             <Link to={"/home"}>Home</Link>
           </li>
-          <li className={`font-poppins cursor-pointer text-ta-blue text-lg md:text-2xl ${location.pathname === '/about' ? 'font-bold': ''}`}>
+          <li
+            className={`font-poppins cursor-pointer text-ta-blue text-lg md:text-2xl ${
+              location.pathname === "/about" ? "font-bold" : ""
+            }`}
+          >
             <Link to={"/about"}>About</Link>
           </li>
-          <li className={`font-poppins cursor-pointer text-ta-green text-lg md:text-2xl ${location.pathname === '/projects' ? 'font-bold': ''}`}>
+          <li
+            className={`font-poppins cursor-pointer text-ta-green text-lg md:text-2xl ${
+              location.pathname === "/projects" ? "font-bold" : ""
+            }`}
+          >
             <Link to={"/projects"}>Projects</Link>
           </li>
-          <li className={`font-poppins cursor-pointer text-ta-red text-lg md:text-2xl ${location.pathname === '/contact' ? 'font-bold': ''}`}>
+          <li
+            className={`font-poppins cursor-pointer text-ta-red text-lg md:text-2xl ${
+              location.pathname === "/contact" ? "font-bold" : ""
+            }`}
+          >
             <Link to={"/contact"}>Contact</Link>
           </li>
           <ul className="w-full flex justify-end">

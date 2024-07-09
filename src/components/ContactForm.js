@@ -1,14 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsFillSendFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { MdEmail, MdMessage, MdSubject } from "react-icons/md";
-import { useForm, } from "@formspree/react";
+import { useForm } from "@formspree/react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("meqngdvv");
-  if (state.succeeded) {
-    return <p className="text-3xl text-center font-bold py-6 px-6">Email sent successfully!</p>;
-  }
+
+  useEffect(() => {
+    if (state.succeeded) {
+      let timerInterval;
+      Swal.fire({
+        title: "Message sent successfully",
+        html: "Modal wil close automatically.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+        },
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          window.location.reload();
+        }
+      });
+      // return window.location.reload()
+      // <p className="text-3xl text-center font-bold py-6 px-6">Email sent successfully!</p>;
+    }
+  }, [state.succeeded]);
+
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
       <p className="text-3xl mb-4 font-bold">Send us a mail</p>
