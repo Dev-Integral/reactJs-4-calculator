@@ -1,8 +1,7 @@
 {
   "files": {
     "main.css": "/my_profile/static/css/main.20bc5e24.css",
-    "main.js": "/my_profile/static/js/main.f70a24c2.js",
-    "static/media/glade.png": "/my_profile/static/media/glade.156d1cb7fcc59855b097.png",
+    "main.js": "/my_profile/static/js/main.ea65c700.js",
     "static/media/hammersmith-one-latin-400-normal.woff2": "/my_profile/static/media/hammersmith-one-latin-400-normal.964e5dd101bf3d9cbb01.woff2",
     "static/media/hammersmith-one-latin-ext-400-normal.woff2": "/my_profile/static/media/hammersmith-one-latin-ext-400-normal.1fae03957b8792480a3c.woff2",
     "static/media/hammersmith-one-latin-400-normal.woff": "/my_profile/static/media/hammersmith-one-latin-400-normal.7cf49610d6da629546e3.woff",
@@ -12,10 +11,10 @@
     "static/media/revicons.woff": "/my_profile/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/my_profile/index.html",
     "main.20bc5e24.css.map": "/my_profile/static/css/main.20bc5e24.css.map",
-    "main.f70a24c2.js.map": "/my_profile/static/js/main.f70a24c2.js.map"
+    "main.ea65c700.js.map": "/my_profile/static/js/main.ea65c700.js.map"
   },
   "entrypoints": [
     "static/css/main.20bc5e24.css",
-    "static/js/main.f70a24c2.js"
+    "static/js/main.ea65c700.js"
   ]
 }
