@@ -8,7 +8,7 @@ function Projects() {
   return (
     <div className="h-screen">
       <div className="flex flex-col justify-between h-full">
-        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div>
           <TopLine className={"bg-ta-blue h-4"} />
           <Header />
         </div>

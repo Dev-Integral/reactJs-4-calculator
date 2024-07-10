@@ -8,7 +8,7 @@ function About() {
   return (
     <div className="flex h-screen">
       <div className="flex flex-col justify-between">
-        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div>
           <TopLine className={"bg-ta-green h-4"} />
           <Header />
         </div>
