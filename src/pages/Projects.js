@@ -15,7 +15,7 @@ function Projects() {
         </div>
         <div className="relative">
           <div className="">
-            <p className="text-center text-[60px] text-ta-blue font-hammersmith leading-none">
+            <p className="text-center text-[30px] md:text-[60px] text-ta-blue font-hammersmith leading-none">
               FEATURED WORK
             </p>
             <div className="px-24 py-3">
