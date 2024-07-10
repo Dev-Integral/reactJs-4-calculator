@@ -8,11 +8,11 @@ function About() {
   return (
     <div className="flex h-screen">
       <div className="flex flex-col justify-between">
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <TopLine className={"bg-ta-green h-4"} />
           <Header />
         </div>
-        <div className="relative">
+        <div className="relative" data-aos="zoom-out">
           <div className="flex flex-col">
             <div className="mr-24">
               <p className="bg-ta-blue text-white font-hammersmith px-12 md:px-24 text-[30px] md:text-[70px] rounded-tr-[35px] rounded-br-[35px]">
@@ -52,7 +52,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <Footer />
         </div>
       </div>

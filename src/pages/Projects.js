@@ -4,40 +4,28 @@ import { Header } from "../components/Header";
 import Footer from "../components/Footer";
 import SimpleSlider from "../components/SimpleSlider";
 
-
 function Projects() {
   return (
     <div className="h-screen">
       <div className="flex flex-col justify-between h-full">
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <TopLine className={"bg-ta-blue h-4"} />
           <Header />
         </div>
         <div className="relative">
-          <div className="">
-            <p className="text-center text-[30px] md:text-[60px] text-ta-blue font-hammersmith leading-none">
+          <div>
+            <p
+              data-aos="fade-right"
+              className="text-center text-[30px] md:text-[60px] text-ta-blue font-hammersmith leading-none"
+            >
               FEATURED WORK
             </p>
-            <div className="px-24 py-3">
-             <SimpleSlider />
+            <div className="px-12 md:px-24 py-3" data-aos="flip-right">
+              <SimpleSlider />
             </div>
-            {/* <div className="flex gap-3">
-              <div>
-                <img
-                  src={glade}
-                  alt="Gladefinance shot"
-                  className="h-[200px]"
-                />
-                <p>Gladefinance -</p>
-              </div>
-              <img src={glade} alt="Gladefinance shot" className="h-[200px]" />
-              <img src={glade} alt="Gladefinance shot" className="h-[200px]" />
-              <img src={glade} alt="Gladefinance shot" className="h-[200px]" />
-              <img src={glade} alt="Gladefinance shot" className="h-[200px]" />
-            </div> */}
           </div>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <Footer />
         </div>
       </div>
