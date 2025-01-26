@@ -31,7 +31,7 @@ function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-ta-blue">Call / Whatsapp</p>
-                    <p>+234 814 942 9711</p>
+                    <p>+44 755 1118 169</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-center">
