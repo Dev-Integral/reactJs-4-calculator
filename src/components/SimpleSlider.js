@@ -3,15 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import glade from "../assets/images/glade.png";
-import cligohr from "../assets/images/cligohr.png";
-import transit from "../assets/images/transit.png";
-import portfolio from "../assets/images/portfolio.png";
-import myxellia from "../assets/images/myxellia.png";
+import flostev from "../assets/images/flostev.png";
+import radioo from "../assets/images/radioo.png";
+import nuprex from "../assets/images/nuprex.png";
 import web from "../assets/images/web.gif";
 
 export default function SimpleSlider() {
   var settings = {
     dots: true,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -48,40 +48,34 @@ export default function SimpleSlider() {
   };
   const projects = [
     {
+      name: "Flostev School",
+      image: flostev,
+      description:
+        "Designed and developed a responsive school website using React and TailwindCSS. The site features an intuitive user interface with sections for academic programs, news updates, gallery and contact information. Focused on delivering a clean, modern design with smooth navigation.",
+      link: "https://flostevschool.com",
+    },
+    {
       name: "Gladefinance",
       image: glade,
       description:
-        "Simplified payments and invoice management in one place. Thousands of businesses using Gladefinance to scale their businesses.",
+        "GladeFinance is a fintech platform that helps businesses manage payments, invoices, and expenses efficiently. Built with Next.js, React, and TailwindCSS, the platform delivers a fast, responsive, and intuitive user experience through a robust web dashboard tailored for business finance management.",
       link: "https://gladefinance.co",
     },
     {
-      name: "Cligohr",
-      image: cligohr,
+      name: "Radio O",
+      image: radioo,
       description:
-        "A human resource platform that allows applicant the opportunity to support their applications with a video clip to recruiters",
+        "Built a modern and responsive website for an online radio station using React and TailwindCSS. The platform showcases live audio streaming and real-time updates. Emphasized user experience with a sleek UI, fast load times, and seamless navigation across desktop and mobile devices.",
       link: "https://www.app.getcligohr.com",
     },
     {
-      name: "Transit",
-      image: transit,
+      name: "Nuprex",
+      image: nuprex,
       description:
-        "A bus hailing service that allows users to navigate laagos easily while conserving resources.",
-      link: "https://transitonline.app",
+        "Nuprex is a logistics platform that allows users to easily send and receive packages within Lagos. Through the Nuprex web application, customers can request deliveries, track packages, and manage their logistics seamlessly. Built using react and tailwindCss",
+      link: "https://nuprex.com.ng",
     },
-    {
-      name: "Portfolio",
-      image: portfolio,
-      description:
-        "Taiwo Ayoola - A passionate Software Engineer, specializing in creating innovative and user-friendly solutions",
-      link: "https://taiwoayoola.netlify.app",
-    },
-    {
-      name: "Myxellia",
-      image: myxellia,
-      description:
-        "An ever-evolving tech of interconnected apps & services, built to make real estate work better for all.",
-      link: "https://www.myxellia.io",
-    },
+    
   ];
   return (
     <Slider {...settings}>
@@ -92,10 +86,10 @@ export default function SimpleSlider() {
             alt="Gladefinance shot"
             className="rounded-tl-md rounded-tr-md shadow"
           />
-          <div className="bg-slate-100 p-3 md:h-[85px] shadow rounded-md">
+          <div className="bg-slate-100 p-3 shadow rounded-md">
             <div className="flex items-center justify-between">
               <p className="text-xl p-1 font-bold">{project.name}</p>
-              <a href={project.link} className="h-6 w-6 cursor-pointer">
+              <a href={project.link} target="_blank" rel="noreferrer" className="h-6 w-6 cursor-pointer">
                 <img src={web} alt="web" />
               </a>
             </div>

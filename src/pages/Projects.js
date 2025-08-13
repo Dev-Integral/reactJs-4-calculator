@@ -20,7 +20,7 @@ function Projects() {
             >
               FEATURED WORK
             </p>
-            <div className="px-12 md:px-24 py-3" data-aos="flip-right">
+            <div className="bg-[#eee] px-12 md:px-24 py-3" data-aos="flip-right">
               <SimpleSlider />
             </div>
           </div>
